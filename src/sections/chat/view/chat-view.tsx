@@ -48,7 +48,7 @@ export default function ChatView() {
   useEffect(() => {
     const sendData = async () => {
       try {
-        const response = await fetch(`${process.env.REACT_APP_HOST_API}/data/all`, {
+        const response = await fetch(`${process.env.REACT_APP_HOST_API}/api/allData`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json'
@@ -61,9 +61,6 @@ export default function ChatView() {
         const {contacts1, conversations1} = jsonData
         setFetchContacts(contacts1)
         setFetchConversations(conversations1)
-        console.log('jsonData', jsonData)
-        console.log('contacts1', contacts1)
-        console.log('conversations1', conversations1)
       } catch (error) {
         console.error('Error sending data:', error);
       }
